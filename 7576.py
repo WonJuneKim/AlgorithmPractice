@@ -1,5 +1,5 @@
-from collections import deque
 import sys
+from collections import deque
 input = sys.stdin.readline
 
 ##토마토의 정보를 입력
