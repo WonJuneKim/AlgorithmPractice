@@ -2,13 +2,14 @@ import sys
 input_sys = sys.stdin.readline
 n, k = map(int, input().split())
 b = list(map(int, input().split()))
-answer = 0
-current = 0
+#여기에 각 자리까지의 합을 미리 넣어둠
+answer = []
+answer.append(sum(b[:k]))
+#여기에 answer은 단일 값이다.
 
-# 여기서 n이 100000까지 될 수 있음
-for i in range(n-k+1):
-    current = sum(b[i:i+k])
-    answer = max(current, answer)
+for i in range(n-k):
+    #미리 저장된 구간의 합에 이전꺼를 빼고 다음거를 넣음
+    #answer에는 미리 저장된 구간합, b에는 실제 리스트
+    answer.append(answer[i] - b[i] + b[k+i])
 
-print(answer)
-
+print(max(answer))
