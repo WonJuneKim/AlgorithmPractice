@@ -14,9 +14,11 @@ for i in range(len(p)):
         stack.append(p[i])
 
     elif p[i] == ')':
+        # stack이 비지는 않앗는지, 짝지어진 괄호가 일치하는지 확인
         if not stack or stack[-1] != '(':
             result = 0
             break
+        # 짝지어진 괄호가 일치하면 결과에 현재 res 값을 더하고 res를 2로 나눠줍니다.
         if p[i - 1] == '(': result += res
         res //= 2
         stack.pop()
