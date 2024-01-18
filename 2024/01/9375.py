@@ -6,4 +6,3 @@ for _ in range(a):
     n= int(input())
     for _ in range(n):
         cloth, name =
-
