@@ -1,12 +1,11 @@
-import sys
+A, B = map(int, input().split())
+res = A*B
 
-input = sys.stdin.readline
 
-A, B = map(int, input().rstrip().split())
+while B:
+    if A > B:
+        A, B = B, A
+    B %= A
 
-n = 1
-while True:
-  if n % A == 0 and n % B == 0:
-    print(n)
-    break
-  n += 1
+
+print(res//A)
